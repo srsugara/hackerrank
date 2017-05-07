@@ -24,8 +24,16 @@ function result(s,k){
         for(var i = 0; i < s.length; i++){
             if(format.test(s[i])){
                 newString[i]=s[i];
-            }else{
-                newString[i] = String.fromCharCode(s[i].charCodeAt() + k);
+            }
+            else{
+                if((s[i].charCodeAt()+k) >= 65 && (s[i].charCodeAt()+k) <= 90){
+                    newString[i] = String.fromCharCode(s[i].charCodeAt() + k);
+                }else if((s[i].charCodeAt()+k) >= 97 && (s[i].charCodeAt()+k) <= 122){
+                    newString[i] = String.fromCharCode(s[i].charCodeAt() + k);
+                }
+                else{
+                    newString[i] = String.fromCharCode(s[i].charCodeAt() + (k-26));
+                }
             }
         }
         newString = newString.join('');

@@ -11,8 +11,7 @@ function processData(input) {
         }
     }
     console.log(Math.min.apply(null,result));
-    
-} 
+}
 
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
